@@ -11,6 +11,7 @@ from flask import session
 from indico.core import signals
 from indico.modules.events.registration.custom import CustomRegistrationListItem, RegistrationListColumn
 from indico.modules.events.registration.lists import RegistrationListGenerator
+from indico.util.i18n import _
 
 
 pytest_plugins = 'indico.modules.events.registration.testing.fixtures'
@@ -18,7 +19,7 @@ pytest_plugins = 'indico.modules.events.registration.testing.fixtures'
 
 class _TestColumn(CustomRegistrationListItem):
     name = 'test_col'
-    title = 'Test Column'
+    title = _('Test Column')
 
     def load_data(self, registrations):
         return {reg: RegistrationListColumn(content='val', text_value='val') for reg in registrations}

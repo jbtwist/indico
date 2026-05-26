@@ -32,6 +32,7 @@ from indico.modules.events.registration.util import (create_registration, genera
                                                      modify_registration, process_registration_picture)
 from indico.modules.users.models.users import ProfilePictureSource, UserTitle
 from indico.testing.util import assert_json_snapshot
+from indico.util.i18n import _
 from indico.util.spreadsheets import CSVFieldDelimiter
 
 
@@ -1005,7 +1006,7 @@ class _FakeExtraColumn:
     """Minimal stand-in for CustomRegistrationListItem for spreadsheet tests."""
 
     filter_only = False
-    title = 'Custom Column'
+    title = _('Custom Column')
 
     def __init__(self, data=None):
         self.data = data or {}
